@@ -5,6 +5,7 @@ import { BeerComponent } from './components/beer/beer.component';
 import { BeersRoutingModule } from './beers-rounting.';
 import { ListComponent } from './components/list/list.component';
 import { SearchComponent } from './components/search/search.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -16,7 +17,8 @@ import { SearchComponent } from './components/search/search.component';
   ],
   imports: [
     CommonModule,
-    BeersRoutingModule
+    BeersRoutingModule,
+    MaterialModule
   ]
 })
 export class BeersModule { }
