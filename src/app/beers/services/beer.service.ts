@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, concatMap, delay, from, of } from 'rxjs';
 import { Beer } from 'src/app/interfaces/beer.interface';
 import { environments } from 'src/environments/environments';
 
@@ -23,5 +23,12 @@ export class BeerService {
     .pipe(
       catchError( error => of(undefined) )
     )
+  }
+
+  getSugerencias( query: string ): Observable<Beer[]> {
+
+    let queryString = query.replace(/ /g, "_");
+
+    return this.http.get<Beer[]>(`${ this.baseUrl }/beers?beer_name=${queryString}&per_page=6`);
   }
 }

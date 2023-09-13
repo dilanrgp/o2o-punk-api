@@ -2,7 +2,13 @@
 <mat-divider></mat-divider>
 
 <div class="grid mb-8 pt-2">
-    <div *ngFor="let beer of beers" class="col-3 sm:col-6 md:col-3 xl:col-3" fxLayoutAlign=" stretch">
+    <div class="col-12" fxLayoutAlign=" stretch">
+    <beer-search></beer-search>
+    </div>
+</div>
+
+<div class="grid mb-8 pt-2">
+    <div *ngFor="let beer of beers" class="col-12 sm:col-6 md:col-4 xl:col-3" fxLayoutAlign=" stretch">
         <beer-card [beer]="beer"></beer-card>
     </div>
 </div>
