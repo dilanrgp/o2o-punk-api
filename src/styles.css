@@ -6,3 +6,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .spacer {
     flex: 1 1 auto;
 } 
+
+.img-card {
+    width: 50%;
+    height: 600px; /* Altura a tu gusto */
+    
+}

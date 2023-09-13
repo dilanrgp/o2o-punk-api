@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutPageComponent } from '../pages/layout-page/layout-page.component';
-import { SearchComponent } from './components/search/search.component';
-import { ListComponent } from './components/list/list.component';
+
 import { BeerComponent } from './components/beer/beer.component';
+import { LayoutPageComponent } from '../pages/layout-page/layout-page.component';
+import { ListPageComponent } from './pages/list-page/list-page.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 const routes: Routes = [
@@ -13,7 +13,7 @@ const routes: Routes = [
       component: LayoutPageComponent,
       children: [
         { path: 'search', component: SearchComponent },
-        { path: 'list', component: ListComponent },
+        { path: 'list', component: ListPageComponent },
         { path: ':id', component: BeerComponent },
         { path: '**', redirectTo: 'list' }
       ]
