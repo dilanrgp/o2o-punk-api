@@ -7,10 +7,8 @@ import { BeersRoutingModule } from './beers-rounting.';
 import { ImagenPipe } from '../pipes/imagen.pipe';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { MaterialModule } from '../material/material.module';
-import { SearchComponent } from './components/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [

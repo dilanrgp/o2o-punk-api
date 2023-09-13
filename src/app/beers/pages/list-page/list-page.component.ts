@@ -1,4 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
+
 import { Beer } from 'src/app/interfaces/beer.interface';
 import { BeerService } from '../../services/beer.service';
 
@@ -15,7 +16,10 @@ export class ListPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.beerService.getBeers().subscribe( {
-      next: (resp) => this.beers = resp
+      next: (resp) => this.beers = resp,
+      error: () => {
+        this.beers = []
+      }
     })
     
   }

@@ -1,15 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable, catchError, concatMap, delay, from, of } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
+
 import { Beer } from 'src/app/interfaces/beer.interface';
-import { environments } from 'src/environments/environments';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BeerService {
 
-  private baseUrl: string = environments.baseUrl;
+  private baseUrl: string = environment.baseUrl;
   private http = inject(HttpClient);
 
   constructor() { }
@@ -29,6 +30,6 @@ export class BeerService {
 
     let queryString = query.replace(/ /g, "_");
 
-    return this.http.get<Beer[]>(`${ this.baseUrl }/beers?name=${queryString}&description=${queryString}&food=${queryString}&tagline=&${queryString}&per_page=6`);
+    return this.http.get<Beer[]>(`${ this.baseUrl }/beers?beer_name=${queryString}&per_page=6`);
   }
 }

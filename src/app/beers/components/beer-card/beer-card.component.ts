@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+
 import { Beer } from 'src/app/interfaces/beer.interface';
 
 @Component({
