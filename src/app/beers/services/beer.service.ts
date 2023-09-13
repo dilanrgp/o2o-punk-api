@@ -29,6 +29,6 @@ export class BeerService {
 
     let queryString = query.replace(/ /g, "_");
 
-    return this.http.get<Beer[]>(`${ this.baseUrl }/beers?beer_name=${queryString}&per_page=6`);
+    return this.http.get<Beer[]>(`${ this.baseUrl }/beers?name=${queryString}&description=${queryString}&food=${queryString}&tagline=&${queryString}&per_page=6`);
   }
 }
