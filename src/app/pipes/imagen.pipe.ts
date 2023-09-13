@@ -9,7 +9,7 @@ export class ImagenPipe implements PipeTransform {
   transform(beer: Beer): string {
 
     if ( !beer.id && !beer.image_url || beer.image_url === null ) {
-      return 'assets/no-image.jpg';
+      return 'assets/images/no-image.jpg';
     } else {
       return beer.image_url;
     } 
